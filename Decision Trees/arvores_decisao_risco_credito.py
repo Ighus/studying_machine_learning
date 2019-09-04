@@ -1,5 +1,6 @@
 #%%
 import pandas as pd
+import ujson as json
 
 base = pd.read_csv('Decision Trees/bases/risco-credito.csv')
 previsores = base.iloc[:,0:4].values
@@ -27,3 +28,11 @@ export.export_graphviz(classificador,
                        filled=True,
                        leaves_parallel=True)
 #%%
+d = [ 
+    dict([
+        (colname, row[i]) 
+        for i,colname in enumerate(base.columns)
+    ])
+    for row in df.values
+]
+json.dumps(d)
