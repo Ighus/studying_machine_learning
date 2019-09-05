@@ -1,8 +1,8 @@
 #%%
 import pandas as pd
-import ujson as json
+import json as json
 
-base = pd.read_csv('Decision Trees/bases/risco-credito.csv')
+base = pd.read_csv('bases/risco-credito.csv')
 previsores = base.iloc[:,0:4].values
 classe = base.iloc[:,4].values
 
@@ -33,6 +33,8 @@ d = [
         (colname, row[i]) 
         for i,colname in enumerate(base.columns)
     ])
-    for row in df.values
+    for row in base.values
 ]
 json.dumps(d)
+
+#%%

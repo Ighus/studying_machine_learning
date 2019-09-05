@@ -3,7 +3,7 @@ import pandas as pd
 
 #%%
 
-base = pd.read_csv('Naive Bayes/local_bases/risco-credito.csv')
+base = pd.read_csv('bases/risco-credito.csv')
 previsores = base.iloc[:,0:4].values
 classe = base.iloc[:,4].values
 #%%
